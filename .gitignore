@@ -3,3 +3,9 @@ build/
 __pycache__/
 *.pyc
 .pytest_cache/
+data/
+build/
+*.result.xml
+*.jou
+*.pb
+*.wdb
