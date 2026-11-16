@@ -1,0 +1,5 @@
+git      598fce5-dirty
+vivado   2024.1
+part     xc7a35tfgg484-2
+config   P=8 PE_TYPE=LUT_CUSTOM SUM_STYLE=ADDER F_MHZ=100 (clk_core requested 100 MHz) BAUD=921600
+bit      <repo>/build/bit/P8_LUT_CUSTOM_ADDER_100MHz/top.bit

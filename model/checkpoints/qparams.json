@@ -1,0 +1,13 @@
+{
+  "calibration": "max",
+  "n_calib": 1000,
+  "val_fp32": 0.8948,
+  "val_golden": {
+    "max": 0.8948,
+    "p99.99": 0.8948,
+    "p99.9": 0.8924
+  },
+  "test_fp32": 0.8872,
+  "test_golden": 0.885,
+  "test_drop_points": 0.22
+}

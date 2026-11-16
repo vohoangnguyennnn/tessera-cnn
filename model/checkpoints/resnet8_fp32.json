@@ -1,0 +1,11 @@
+{
+  "epochs": 200,
+  "seed": 0,
+  "batch": 128,
+  "lr": 0.1,
+  "weight_decay": 0.0005,
+  "val_acc": 0.895,
+  "test_acc": 0.8872,
+  "train_minutes": 13.3,
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU"
+}

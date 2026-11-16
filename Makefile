@@ -7,10 +7,10 @@ PE_TYPE   ?= LUT_CUSTOM
 SUM_STYLE ?= ADDER
 F_MHZ     ?= 100
 
-.PHONY: help venv train quantize export test test-py test-mul8 xsim l5 mul-ooc lane-ooc bit board sweep
+.PHONY: help venv train quantize export test test-py test-mul8 xsim cov l5 mul-ooc lane-ooc bit board sweep
 
 help:
-	@echo "Targets: venv train quantize export test test-py test-mul8 xsim l5 mul-ooc lane-ooc bit board sweep"
+	@echo "Targets: venv train quantize export test test-py test-mul8 xsim cov l5 mul-ooc lane-ooc bit board sweep"
 	@echo "Config:  P=$(P) PE_TYPE=$(PE_TYPE) SUM_STYLE=$(SUM_STYLE) F_MHZ=$(F_MHZ)"
 
 venv:
@@ -22,7 +22,7 @@ train:
 quantize:
 	$(PY) model/quantize.py
 export:
-	$(PY) model/export.py
+	$(PY) model/export.py --images 82  # make cov uses test image 81
 # test: the whole regression (L0 Python, L1 unit, L2 op, L3/L4 network), ~7 min
 test:
 	$(PY) -m pytest
@@ -44,6 +44,23 @@ xsim:
 	cd build/xsim && xvlog -sv $(CORE_SRCS:%=../../rtl/core/%.sv) ../../tb/net/tb_accel_xsim.sv > xvlog.log \
 		&& xelab tb_accel_xsim -s tb_snap -timescale 1ns/1ps > xelab.log && xsim tb_snap -R | tee xsim.log \
 		&& grep -q "XSIM PASS" xsim.log
+# functional coverage (docs/coverage_plan.md): covergroups bound in by tb/net/accel_cov.sv, 3 tests, ~5 min.
+# A test fails on a golden mismatch or on any illegal_bins hit (XSim only prints those as ERROR).
+#   base = images 0-2 as in make xsim; step = op by op with stop_after_op (closes CTRL.T7/T8);
+#   sat = image 81, the first test image that saturates int8 both ways (closes LANE.SAT8; needs export --images 82)
+# Reports: results/cov/base (before closure) and results/cov/merged (all 3 tests merged).
+COV_TESTS = base: step:+STEP sat:+IMG0=81+N_IMG=1
+cov:
+	rm -rf build/cov/xsim.covdb && mkdir -p build/cov
+	cd build/cov && xvlog -sv $(CORE_SRCS:%=../../rtl/core/%.sv) ../../tb/net/tb_accel_xsim.sv ../../tb/net/accel_cov.sv > xvlog.log \
+		&& xelab tb_accel_xsim accel_cov_bind -s cov_snap -timescale 1ns/1ps > xelab.log
+	cd build/cov && for t in $(COV_TESTS); do name=$${t%%:*}; args=$${t#*:}; \
+		xsim cov_snap -R -cov_db_name $$name $$(echo $$args | tr '+' '\n' | sed '/^$$/d; s/^/-testplusarg /') > $$name.log; \
+		grep -a "XSIM\|image\|WARNING: File" $$name.log; \
+		grep -aq "XSIM PASS" $$name.log || exit 1; \
+		if grep -aq "Illegal" $$name.log; then echo "$$name: illegal coverage bin hit"; exit 1; fi; done
+	cd build/cov && xcrg -cov_db_dir . -cov_db_name base -report_format all -report_dir ../../results/cov/base > xcrg_base.log \
+		&& xcrg -cov_db_dir . -report_format all -report_dir ../../results/cov/merged > xcrg_merged.log
 # spec 12.0: OOC synth + implement of each multiplier -> results/mul8_ooc/summary.csv (~10-20 min)
 mul-ooc:
 	mkdir -p build/vivado

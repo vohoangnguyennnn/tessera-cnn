@@ -1,0 +1,54 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 03:46:05 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file <repo>/results/lane_ooc/LUT_CUSTOM_ADDER_L2/at_fmax/util_hier.rpt
+| Design       : lane_ooc
+| Device       : xc7a35tfgg484-2
+| Speed File   : -2
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+|         Instance         |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++--------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+| lane_ooc                 |            (top) |       1692 |       1692 |       0 |    0 | 1180 |      0 |      0 |          0 |
+|   (lane_ooc)             |            (top) |          0 |          0 |       0 |    0 |  225 |      0 |      0 |          0 |
+|   u_lane                 |             lane |       1692 |       1692 |       0 |    0 |  955 |      0 |      0 |          0 |
+|     (u_lane)             |             lane |       1042 |       1042 |       0 |    0 |  296 |      0 |      0 |          0 |
+|     u_dot                |             dot8 |        650 |        650 |       0 |    0 |  659 |      0 |      0 |          0 |
+|       (u_dot)            |             dot8 |        178 |        178 |       0 |    0 |  123 |      0 |      0 |          0 |
+|       g_mul[0].u_mul     |             mul8 |         60 |         60 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         (g_mul[0].u_mul) |             mul8 |          1 |          1 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__1 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[1].u_mul     |           mul8_0 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__2 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[2].u_mul     |           mul8_1 |         60 |         60 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         (g_mul[2].u_mul) |           mul8_1 |          1 |          1 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__3 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[3].u_mul     |           mul8_2 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__4 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[4].u_mul     |           mul8_3 |         60 |         60 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         (g_mul[4].u_mul) |           mul8_3 |          1 |          1 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__5 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[5].u_mul     |           mul8_4 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__6 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[6].u_mul     |           mul8_5 |         60 |         60 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         (g_mul[6].u_mul) |           mul8_5 |          1 |          1 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         g_booth.u_mul    | booth_r4_mul8__7 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       g_mul[7].u_mul     |           mul8_6 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_booth.u_mul    |    booth_r4_mul8 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
++--------------------------+------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
