@@ -1,0 +1,42 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 03:52:28 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file <repo>/results/lane_ooc/LUT_INFERRED_ADDER_L2/at_fmax/util_hier.rpt
+| Design       : lane_ooc
+| Device       : xc7a35tfgg484-2
+| Speed File   : -2
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------+--------+------------+------------+---------+------+-----+--------+--------+------------+
+|       Instance       | Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------------+--------+------------+------------+---------+------+-----+--------+--------+------------+
+| lane_ooc             |  (top) |       1714 |       1714 |       0 |    0 | 900 |      0 |      0 |          0 |
+|   (lane_ooc)         |  (top) |          0 |          0 |       0 |    0 | 225 |      0 |      0 |          0 |
+|   u_lane             |   lane |       1714 |       1714 |       0 |    0 | 675 |      0 |      0 |          0 |
+|     (u_lane)         |   lane |       1048 |       1048 |       0 |    0 | 296 |      0 |      0 |          0 |
+|     u_dot            |   dot8 |        666 |        666 |       0 |    0 | 379 |      0 |      0 |          0 |
+|       (u_dot)        |   dot8 |        178 |        178 |       0 |    0 | 123 |      0 |      0 |          0 |
+|       g_mul[0].u_mul |   mul8 |         62 |         62 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[1].u_mul | mul8_0 |         61 |         61 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[2].u_mul | mul8_1 |         62 |         62 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[3].u_mul | mul8_2 |         61 |         61 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[4].u_mul | mul8_3 |         62 |         62 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[5].u_mul | mul8_4 |         61 |         61 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[6].u_mul | mul8_5 |         62 |         62 |       0 |    0 |  32 |      0 |      0 |          0 |
+|       g_mul[7].u_mul | mul8_6 |         61 |         61 |       0 |    0 |  32 |      0 |      0 |          0 |
++----------------------+--------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
