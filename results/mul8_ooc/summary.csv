@@ -1,0 +1,9 @@
+# vivado 2024.1, part xc7a35tfgg484-2, git 598fce5-dirty
+pe_type,sum_style,l_mul,synth_opts,lut,ff,carry4,dsp,logic_levels,wns_100mhz_ns,fmax_mhz,wns_at_fmax_ns,fmax_est_mhz
+LUT_CUSTOM,ADDER,0,,67,0,8,0,9,4.119,210,0.177,223
+LUT_CUSTOM,ADDER,2,,59,67,10,0,3,7.178,470,0.118,479
+LUT_CUSTOM,CSA42,0,,65,0,4,0,7,5.105,280,0.003,286
+LUT_CUSTOM,CSA42,2,,62,69,4,0,6,7.676,510,0.014,519
+LUT_INFERRED,ADDER,0,,61,0,14,0,8,4.636,230,0.113,243
+LUT_INFERRED,ADDER,2,,61,32,14,0,8,4.710,220,0.230,238
+LUT_INFERRED,ADDER,2,-global_retiming on,61,32,14,0,8,4.710,220,0.230,238

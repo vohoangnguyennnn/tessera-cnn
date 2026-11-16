@@ -1,0 +1,623 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 02:50:16 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_timing -max_paths 10 -file <repo>/results/mul8_ooc/LUT_INFERRED_ADDER_L2_retiming/at_fmax/timing_paths.rpt
+| Design       : mul8_ooc
+| Device       : 7a35t-fgg484
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.230ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][13]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.300ns  (logic 2.201ns (51.189%)  route 2.099ns (48.812%))
+  Logic Levels:           7  (CARRY4=4 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     4.822 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.822    u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1_n_0
+    SLICE_X3Y72          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.265     5.087 r  u_mul/g_lut.g_pipe.pipe_reg[0][15]_i_1/O[1]
+                         net (fo=1, routed)           0.000     5.087    u_mul/g_lut.prod[13]
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][13]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y72          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][13]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -5.087    
+  -------------------------------------------------------------------
+                         slack                                  0.230    
+
+Slack (MET) :             0.235ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][15]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.295ns  (logic 2.196ns (51.132%)  route 2.099ns (48.868%))
+  Logic Levels:           7  (CARRY4=4 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     4.822 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.822    u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1_n_0
+    SLICE_X3Y72          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.260     5.082 r  u_mul/g_lut.g_pipe.pipe_reg[0][15]_i_1/O[3]
+                         net (fo=1, routed)           0.000     5.082    u_mul/g_lut.prod[15]
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][15]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y72          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][15]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -5.082    
+  -------------------------------------------------------------------
+                         slack                                  0.235    
+
+Slack (MET) :             0.295ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][14]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.235ns  (logic 2.136ns (50.439%)  route 2.099ns (49.561%))
+  Logic Levels:           7  (CARRY4=4 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     4.822 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.822    u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1_n_0
+    SLICE_X3Y72          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200     5.022 r  u_mul/g_lut.g_pipe.pipe_reg[0][15]_i_1/O[2]
+                         net (fo=1, routed)           0.000     5.022    u_mul/g_lut.prod[14]
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][14]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y72          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][14]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -5.022    
+  -------------------------------------------------------------------
+                         slack                                  0.295    
+
+Slack (MET) :             0.314ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][12]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.216ns  (logic 2.117ns (50.216%)  route 2.099ns (49.784%))
+  Logic Levels:           7  (CARRY4=4 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.098     4.822 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.822    u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1_n_0
+    SLICE_X3Y72          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.181     5.003 r  u_mul/g_lut.g_pipe.pipe_reg[0][15]_i_1/O[0]
+                         net (fo=1, routed)           0.000     5.003    u_mul/g_lut.prod[12]
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y72          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][12]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y72          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][12]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -5.003    
+  -------------------------------------------------------------------
+                         slack                                  0.314    
+
+Slack (MET) :             0.328ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][9]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.202ns  (logic 2.103ns (50.050%)  route 2.099ns (49.950%))
+  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.265     4.989 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/O[1]
+                         net (fo=1, routed)           0.000     4.989    u_mul/g_lut.prod[9]
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][9]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y71          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][9]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.989    
+  -------------------------------------------------------------------
+                         slack                                  0.328    
+
+Slack (MET) :             0.333ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][11]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.197ns  (logic 2.098ns (49.991%)  route 2.099ns (50.009%))
+  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.260     4.984 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/O[3]
+                         net (fo=1, routed)           0.000     4.984    u_mul/g_lut.prod[11]
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][11]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y71          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][11]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.984    
+  -------------------------------------------------------------------
+                         slack                                  0.333    
+
+Slack (MET) :             0.393ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][10]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.137ns  (logic 2.038ns (49.265%)  route 2.099ns (50.735%))
+  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200     4.924 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/O[2]
+                         net (fo=1, routed)           0.000     4.924    u_mul/g_lut.prod[10]
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][10]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y71          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][10]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.924    
+  -------------------------------------------------------------------
+                         slack                                  0.393    
+
+Slack (MET) :             0.412ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][8]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        4.118ns  (logic 2.019ns (49.031%)  route 2.099ns (50.969%))
+  Logic Levels:           6  (CARRY4=3 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.610     4.406    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.318     4.724 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     4.724    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1_n_0
+    SLICE_X3Y71          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.181     4.905 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_1/O[0]
+                         net (fo=1, routed)           0.000     4.905    u_mul/g_lut.prod[8]
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y71          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][8]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y71          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][8]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.905    
+  -------------------------------------------------------------------
+                         slack                                  0.412    
+
+Slack (MET) :             0.837ns  (required time - arrival time)
+  Source:                 a_q_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        3.692ns  (logic 1.831ns (49.590%)  route 1.861ns (50.410%))
+  Logic Levels:           6  (CARRY4=2 LUT2=1 LUT3=2 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X7Y68          FDRE                                         r  a_q_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[2]/Q
+                         net (fo=17, routed)          0.730     1.896    u_mul/a[2]
+    SLICE_X7Y67          LUT2 (Prop_lut2_I1_O)        0.119     2.015 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_23/O
+                         net (fo=1, routed)           0.240     2.255    u_mul/g_lut.g_pipe.pipe[0][7]_i_23_n_0
+    SLICE_X6Y68          LUT6 (Prop_lut6_I3_O)        0.267     2.522 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_15/O
+                         net (fo=1, routed)           0.000     2.522    u_mul/g_lut.g_pipe.pipe[0][7]_i_15_n_0
+    SLICE_X6Y68          CARRY4 (Prop_carry4_S[0]_O[3])
+                                                      0.505     3.027 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3/O[3]
+                         net (fo=3, routed)           0.519     3.546    u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_3_n_4
+    SLICE_X7Y69          LUT3 (Prop_lut3_I0_O)        0.250     3.796 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_2/O
+                         net (fo=2, routed)           0.372     4.168    u_mul/g_lut.g_pipe.pipe[0][7]_i_2_n_0
+    SLICE_X3Y70          LUT3 (Prop_lut3_I0_O)        0.105     4.273 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_4/O
+                         net (fo=1, routed)           0.000     4.273    u_mul/g_lut.g_pipe.pipe[0][7]_i_4_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.206     4.479 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/O[3]
+                         net (fo=1, routed)           0.000     4.479    u_mul/g_lut.prod[7]
+    SLICE_X3Y70          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y70          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][7]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y70          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][7]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.479    
+  -------------------------------------------------------------------
+                         slack                                  0.837    
+
+Slack (MET) :             1.235ns  (required time - arrival time)
+  Source:                 a_q_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Destination:            u_mul/g_lut.g_pipe.pipe_reg[0][6]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.273ns period=4.545ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.545ns  (clk rise@4.545ns - clk rise@0.000ns)
+  Data Path Delay:        3.294ns  (logic 1.569ns (47.633%)  route 1.725ns (52.367%))
+  Logic Levels:           4  (CARRY4=2 LUT3=1 LUT4=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.748ns = ( 5.293 - 4.545 ) 
+    Source Clock Delay      (SCD):    0.787ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=63, unset)           0.787     0.787    clk
+    SLICE_X3Y68          FDRE                                         r  a_q_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y68          FDRE (Prop_fdre_C_Q)         0.379     1.166 r  a_q_reg[1]/Q
+                         net (fo=18, routed)          0.888     2.054    u_mul/a[1]
+    SLICE_X4Y70          LUT4 (Prop_lut4_I0_O)        0.119     2.173 r  u_mul/g_lut.g_pipe.pipe[0][11]_i_17/O
+                         net (fo=1, routed)           0.148     2.321    u_mul/g_lut.g_pipe.pipe[0][11]_i_17_n_0
+    SLICE_X5Y70          CARRY4 (Prop_carry4_DI[1]_O[2])
+                                                      0.611     2.932 r  u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_11/O[2]
+                         net (fo=2, routed)           0.689     3.621    u_mul/g_lut.g_pipe.pipe_reg[0][11]_i_11_n_5
+    SLICE_X3Y70          LUT3 (Prop_lut3_I1_O)        0.253     3.874 r  u_mul/g_lut.g_pipe.pipe[0][7]_i_5/O
+                         net (fo=1, routed)           0.000     3.874    u_mul/g_lut.g_pipe.pipe[0][7]_i_5_n_0
+    SLICE_X3Y70          CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     4.081 r  u_mul/g_lut.g_pipe.pipe_reg[0][7]_i_1/O[2]
+                         net (fo=1, routed)           0.000     4.081    u_mul/g_lut.prod[6]
+    SLICE_X3Y70          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.545     4.545 r  
+                                                      0.000     4.545 r  clk (IN)
+                         net (fo=63, unset)           0.748     5.293    u_mul/clk
+    SLICE_X3Y70          FDRE                                         r  u_mul/g_lut.g_pipe.pipe_reg[0][6]/C
+                         clock pessimism              0.000     5.293    
+                         clock uncertainty           -0.035     5.257    
+    SLICE_X3Y70          FDRE (Setup_fdre_C_D)        0.059     5.316    u_mul/g_lut.g_pipe.pipe_reg[0][6]
+  -------------------------------------------------------------------
+                         required time                          5.316    
+                         arrival time                          -4.081    
+  -------------------------------------------------------------------
+                         slack                                  1.235    
+
+
+
+

@@ -1,0 +1,32 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 02:37:39 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file <repo>/results/mul8_ooc/LUT_CUSTOM_ADDER_L2/at_100mhz/util_hier.rpt
+| Design       : mul8_ooc
+| Device       : xc7a35tfgg484-2
+| Speed File   : -2
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------+---------------+------------+------------+---------+------+-----+--------+--------+------------+
+|      Instance     |     Module    | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------+---------------+------------+------------+---------+------+-----+--------+--------+------------+
+| mul8_ooc          |         (top) |         59 |         59 |       0 |    0 |  99 |      0 |      0 |          0 |
+|   (mul8_ooc)      |         (top) |          0 |          0 |       0 |    0 |  32 |      0 |      0 |          0 |
+|   u_mul           |          mul8 |         59 |         59 |       0 |    0 |  67 |      0 |      0 |          0 |
+|     g_booth.u_mul | booth_r4_mul8 |         59 |         59 |       0 |    0 |  67 |      0 |      0 |          0 |
++-------------------+---------------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
