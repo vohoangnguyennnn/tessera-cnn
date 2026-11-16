@@ -1,0 +1,960 @@
+
+ Xcrg Functional Coverage Report 
+
+ // To generate a more detailed report in html format, please run xcrg -dir <database> -report_format html -report_dir <dir>
+ // This is a text report also in CSV format. By exporting to Excel and using , as the delimiter, the data can be split into individual rows and columns
+ // This report contains 3 sections, Total Summary, CoverGroups Summary and CoverPoint Tables sections 
+ // In order to navigate to a CoverPoint's Table, the TableTag printed for the respective covergroup/instance can be grepped in this report
+ // For example, if covergroup name is g1 and coverpoint is cp1, the TableTag to go to the Group's CoverPoint Table summary is g1_cp1 
+ // For example, if covergroup name is g1, instance name is i1, coverpoint is cp1, the TableTag to go to the Instance's CoverPoint Table summary is g1_i1_cp1 
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Total Summary ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+   Date             :, Mon Nov 16 19:49:27 2026 +07
+   User             :, nguyen
+   Version          :, Vivado Simulator Coverage Report 2024.1
+   Command Line     :, /home/nguyen/disk/Vivado/Vivado/2024.1/bin/unwrapped/lnx64.o/xcrg -cov_db_dir . -cov_db_name base -report_format all -report_dir ../../results/cov/base 
+   Number of Tests  :, 1
+
+   Coverage Score            :, 77.7778
+   Total Insts Score         :, 71.7949
+   Total no of Cover Groups  :, 6
+   Total no of Instances     :, 13
+
+
+     CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+       lane_cov_pkg::cg_lane                             ,66.6667     ,8           ,8.33333         ,1           ,100         ,1               ,0               ,0           ,64              ,            ,
+       tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_ctrl      ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+       tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_end   ,50          ,1           ,50              ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+       tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_start ,50          ,1           ,50              ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+       tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_op        ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+       tb_accel_xsim.dut.u_agu.u_agu_cov::cg_agu         ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CoverGroups Summary ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Cover Group Details : lane_cov_pkg::cg_lane
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+lane_cov_pkg::cg_lane                             ,66.6667     ,8           ,8.33333         ,1           ,100         ,1               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - lane_cov_pkg::cg_lane
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+             tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov,66.6667     ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Group cg_lane Cover Point Details 
+
+             Name,                                             TableTag,       Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_cp_sat8 ,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_cp_relu ,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_sat8                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov_cp_sat8,3           ,2           ,1           ,33.3333     ,100         ,1           ,1           ,64          ,            ,
+             cp_relu                                           ,cg_lane_tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov_cp_relu,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+
+
+
+
+
+
+Cover Group Details : tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_ctrl
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_ctrl      ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_ctrl
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             cg_ctrl_i                                         ,100         ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Instance cg_ctrl_i Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_state                                          ,cg_ctrl_cg_ctrl_i_cp_state,5           ,0           ,5           ,100         ,100         ,1           ,1           ,64          ,            ,
+             cp_trans                                          ,cg_ctrl_cg_ctrl_i_cp_trans,6           ,0           ,6           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+
+
+
+
+
+
+Cover Group Details : tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_end
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_end   ,50          ,1           ,50              ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_end
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             cg_run_end_i                                      ,50          ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Instance cg_run_end_i Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_last_op                                        ,cg_run_end_cg_run_end_i_cp_last_op,2           ,1           ,1           ,50          ,100         ,1           ,1           ,64          ,            ,
+
+
+
+
+
+
+
+
+Cover Group Details : tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_start
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_start ,50          ,1           ,50              ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_run_start
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             cg_run_start_i                                    ,50          ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Instance cg_run_start_i Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_first_op                                       ,cg_run_start_cg_run_start_i_cp_first_op,2           ,1           ,1           ,50          ,100         ,1           ,1           ,64          ,            ,
+
+
+
+
+
+
+
+
+Cover Group Details : tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_op
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_op        ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - tb_accel_xsim.dut.u_ctrl.u_ctrl_cov::cg_op
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             cg_op_i                                           ,100         ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Instance cg_op_i Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_op                                             ,cg_op_cg_op_i_cp_op,10          ,0           ,10          ,100         ,100         ,1           ,1           ,64          ,            ,
+             cp_kind                                           ,cg_op_cg_op_i_cp_kind,4           ,0           ,4           ,100         ,100         ,1           ,1           ,64          ,            ,
+             cp_res                                            ,cg_op_cg_op_i_cp_res,2           ,0           ,2           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance cg_op_i Cross Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    Comment,    
+             x_kind_res                                        ,cg_op_cg_op_i_x_kind_res,5           ,0           ,5           ,100         ,100         ,1           ,1           ,            ,
+
+
+
+
+
+
+
+
+Cover Group Details : tb_accel_xsim.dut.u_agu.u_agu_cov::cg_agu
+
+CgName,                                           Score,      NumInsts,   AvgInstScore,   Weight,     Goal,       Merge Insts,    Get Inst Cov,   Per Inst,   AutoBinMax,     Comment,    
+
+tb_accel_xsim.dut.u_agu.u_agu_cov::cg_agu         ,100         ,1           ,100             ,1           ,100         ,0               ,0               ,0           ,64              ,            ,
+
+      Instances of CoverGroup - tb_accel_xsim.dut.u_agu.u_agu_cov::cg_agu
+
+             InstName,                                         Score,      Weight,     Goal,       AtLeast,    AutoBinMax, PrintMissing,   IsInst,     Comment,    
+             cg_agu_i                                          ,100         ,1           ,100         ,1           ,64          ,0               ,1           ,            ,
+
+
+      Instance cg_agu_i Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    AutoBinMax, Comment,    
+             cp_stride                                         ,cg_agu_cg_agu_i_cp_stride,2           ,0           ,2           ,100         ,100         ,1           ,1           ,64          ,            ,
+             cp_row                                            ,cg_agu_cg_agu_i_cp_row,3           ,0           ,3           ,100         ,100         ,1           ,1           ,64          ,            ,
+             cp_col                                            ,cg_agu_cg_agu_i_cp_col,3           ,0           ,3           ,100         ,100         ,1           ,1           ,64          ,            ,
+
+
+      Instance cg_agu_i Cross Cover Point Details 
+
+             Name,                                             TableTag,     Expected,   Uncovered,  Covered,    Percent,    Goal,       Weight,     AtLeast,    Comment,    
+             x_pad                                             ,cg_agu_cg_agu_i_x_pad,13          ,0           ,13          ,100         ,100         ,1           ,1           ,            ,
+
+
+
+
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CoverPoint Tables::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+ Cover Point Table for Group : cg_lane, Variable :, cp_sat8
+ Table tag :, cg_lane_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,258096      ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Group : cg_lane, Variable :, cp_relu
+ Table tag :, cg_lane_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,108132      ,1           ,
+      relu_pos    ,113052      ,1           ,
+      no_relu_neg ,25032       ,1           ,
+      no_relu_pos ,11880       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[0].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,12375       ,1           ,
+      relu_pos    ,15273       ,1           ,
+      no_relu_neg ,3034        ,1           ,
+      no_relu_pos ,1580        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[1].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,14073       ,1           ,
+      relu_pos    ,13575       ,1           ,
+      no_relu_neg ,2535        ,1           ,
+      no_relu_pos ,2079        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[2].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,13506       ,1           ,
+      relu_pos    ,14142       ,1           ,
+      no_relu_neg ,3909        ,1           ,
+      no_relu_pos ,705         ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[3].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,13985       ,1           ,
+      relu_pos    ,13663       ,1           ,
+      no_relu_neg ,2923        ,1           ,
+      no_relu_pos ,1691        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[4].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,17155       ,1           ,
+      relu_pos    ,10493       ,1           ,
+      no_relu_neg ,3515        ,1           ,
+      no_relu_pos ,1099        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[5].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,11350       ,1           ,
+      relu_pos    ,16298       ,1           ,
+      no_relu_neg ,3073        ,1           ,
+      no_relu_pos ,1541        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[6].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,13485       ,1           ,
+      relu_pos    ,14163       ,1           ,
+      no_relu_neg ,2686        ,1           ,
+      no_relu_pos ,1928        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov, Variable :, cp_sat8
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov_cp_sat8
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,2           ,1           ,33.3333     ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      sat_pos     ,0           ,1           ,
+      sat_neg     ,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      in_range    ,32262       ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov, Variable :, cp_relu
+ Table tag :, cg_lane_tb_accel_xsim.dut.u_pe.g_lane[7].u_lane.u_lane_cov_cp_relu
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      relu_zeroed ,12203       ,1           ,
+      relu_pos    ,15445       ,1           ,
+      no_relu_neg ,3357        ,1           ,
+      no_relu_pos ,1257        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_ctrl_i, Variable :, cp_state
+ Table tag :, cg_ctrl_cg_ctrl_i_cp_state
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   5           ,0           ,5           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      idle        ,3084        ,1           ,
+      fetch       ,30          ,1           ,
+      start       ,30          ,1           ,
+      run         ,623646      ,1           ,
+      drain       ,450         ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_ctrl_i, Variable :, cp_trans
+ Table tag :, cg_ctrl_cg_ctrl_i_cp_trans
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   6           ,0           ,6           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      t1_idle_fetch,3           ,1           ,
+      t2_fetch_start_run,30          ,1           ,
+      t3_run_drain,30          ,1           ,
+      t4_drain_wait,420         ,1           ,
+      t5_drain_fetch,27          ,1           ,
+      t6_drain_idle,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_run_end_i, Variable :, cp_last_op
+ Table tag :, cg_run_end_cg_run_end_i_cp_last_op
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   2           ,1           ,1           ,50          ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      t7_stop_after_op,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      t6_after_last_op,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_run_start_i, Variable :, cp_first_op
+ Table tag :, cg_run_start_cg_run_start_i_cp_first_op
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   2           ,1           ,1           ,50          ,
+
+                      Uncovered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      t8_from_later_op,0           ,1           ,
+
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      from_op0    ,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_op_i, Variable :, cp_op
+ Table tag :, cg_op_cg_op_i_cp_op
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   10          ,0           ,10          ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      op_0        ,3           ,1           ,
+      op_1        ,3           ,1           ,
+      op_2        ,3           ,1           ,
+      op_3        ,3           ,1           ,
+      op_4        ,3           ,1           ,
+      op_5        ,3           ,1           ,
+      op_6        ,3           ,1           ,
+      op_7        ,3           ,1           ,
+      op_8        ,3           ,1           ,
+      op_9        ,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_op_i, Variable :, cp_kind
+ Table tag :, cg_op_cg_op_i_cp_kind
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   4           ,0           ,4           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      conv3_s1    ,15          ,1           ,
+      conv3_s2    ,6           ,1           ,
+      conv1_s2    ,6           ,1           ,
+      fc          ,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_op_i, Variable :, cp_res
+ Table tag :, cg_op_cg_op_i_cp_res
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ Automatic,     2           ,0           ,2           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      auto[0]     ,21          ,1           ,
+      auto[1]     ,9           ,1           ,
+
+
+
+
+
+
+ Cross Cover Point Table for Inst : cg_op_i, Variable :, x_kind_res
+ Table tag :, cg_op_cg_op_i_x_kind_res
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ Total,          5           ,0           ,5           ,100         ,
+ Automatic,      5           ,0           ,5           ,1           ,
+
+                 Auto Covered bins 
+
+      cp_kind         ,cp_res          ,Hit Count,  AtLeast,    
+      conv3_s1        ,auto[0]         ,6           ,1           ,
+      conv3_s1        ,auto[1]         ,9           ,1           ,
+      conv3_s2        ,auto[0]         ,6           ,1           ,
+      conv1_s2        ,auto[0]         ,6           ,1           ,
+      fc              ,auto[0]         ,3           ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_agu_i, Variable :, cp_stride
+ Table tag :, cg_agu_cg_agu_i_cp_stride
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   2           ,0           ,2           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      s1          ,500736      ,1           ,
+      s2          ,122880      ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_agu_i, Variable :, cp_row
+ Table tag :, cg_agu_cg_agu_i_cp_row
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,0           ,3           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      top         ,13248       ,1           ,
+      mid         ,600576      ,1           ,
+      bottom      ,9792        ,1           ,
+
+
+
+
+
+
+ Cover Point Table for Inst : cg_agu_i, Variable :, cp_col
+ Table tag :, cg_agu_cg_agu_i_cp_col
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ UserDefined,   3           ,0           ,3           ,100         ,
+
+                     Covered bins 
+
+      Name,       Hit Count,  AtLeast,    
+      left        ,13248       ,1           ,
+      mid         ,600576      ,1           ,
+      right       ,9792        ,1           ,
+
+
+
+
+
+
+ Cross Cover Point Table for Inst : cg_agu_i, Variable :, x_pad
+ Table tag :, cg_agu_cg_agu_i_x_pad
+
+                      Summary 
+
+ Category,       Expected,   Uncovered,  Covered,    Percent,    
+ Total,          13          ,0           ,13          ,100         ,
+ Automatic,      13          ,0           ,13          ,1           ,
+
+                 Auto Covered bins 
+
+      cp_stride       ,cp_row          ,cp_col          ,Hit Count,  AtLeast,    
+      s1              ,top             ,left            ,270         ,1           ,
+      s1              ,top             ,mid             ,9252        ,1           ,
+      s1              ,top             ,right           ,270         ,1           ,
+      s1              ,mid             ,left            ,9252        ,1           ,
+      s1              ,mid             ,mid             ,462648      ,1           ,
+      s1              ,mid             ,right           ,9252        ,1           ,
+      s1              ,bottom          ,left            ,270         ,1           ,
+      s1              ,bottom          ,mid             ,9252        ,1           ,
+      s1              ,bottom          ,right           ,270         ,1           ,
+      s2              ,top             ,left            ,120         ,1           ,
+      s2              ,top             ,mid             ,3336        ,1           ,
+      s2              ,mid             ,left            ,3336        ,1           ,
+      s2              ,mid             ,mid             ,116088      ,1           ,
+
+
+
+
+
+
