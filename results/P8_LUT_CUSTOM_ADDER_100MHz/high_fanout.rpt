@@ -1,0 +1,31 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 17:40:43 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_high_fanout_nets -max_nets 10 -file <repo>/results/P8_LUT_CUSTOM_ADDER_100MHz/high_fanout.rpt
+| Design       : top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++----------------------------------------------------+--------+-------------+
+| Net Name                                           | Fanout | Driver Type |
++----------------------------------------------------+--------+-------------+
+| u_soc/u_core/u_pe/tag_reg[8][last_n_0_]            |    474 | FDRE        |
+| u_soc/u_core/u_ctrl/q_addr[3]                      |    288 | CARRY4      |
+| u_soc/u_core/u_ctrl/q_addr[2]                      |    288 | CARRY4      |
+| u_soc/u_core/u_ctrl/q_addr[5]                      |    288 | CARRY4      |
+| u_soc/u_core/u_ctrl/q_addr[4]                      |    288 | CARRY4      |
+| u_soc/u_core/u_ctrl/q_addr[1]                      |    285 | CARRY4      |
+| u_soc/u_core/u_pe/g_lane[0].u_lane/M0_reg[15]_0[0] |    184 | FDRE        |
+| u_soc/u_core/u_pe/g_lane[1].u_lane/M0_reg[15]_0[0] |    183 | FDRE        |
+| u_soc/u_core/u_pe/g_lane[6].u_lane/n1_reg[4]_0[0]  |    168 | FDRE        |
+| u_soc/u_core/u_ctrl/d[m_r][0]                      |    168 | FDRE        |
++----------------------------------------------------+--------+-------------+
+
+

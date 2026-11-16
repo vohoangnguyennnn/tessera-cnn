@@ -1,0 +1,210 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sat Nov 14 17:40:35 2026
+| Host         : <host> running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file <repo>/results/P8_LUT_CUSTOM_ADDER_100MHz/util_hier.rpt
+| Design       : top
+| Device       : xc7a35tfgg484-2
+| Speed File   : -2
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+|           Instance           |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++------------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+| top                          |             (top) |      13853 |      13822 |       0 |   31 | 9416 |     44 |      0 |          0 |
+|   (top)                      |             (top) |          2 |          2 |       0 |    0 |   29 |      0 |      0 |          0 |
+|   u_clk                      |          clk_core |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     inst                     |  clk_core_clk_wiz |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   u_soc                      |               soc |      13851 |      13820 |       0 |   31 | 9387 |     44 |      0 |          0 |
+|     (u_soc)                  |               soc |          1 |          1 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     u_core                   |             accel |      13589 |      13558 |       0 |   31 | 9072 |     44 |      0 |          0 |
+|       (u_core)               |             accel |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       u_act                  |           act_mem |        198 |        198 |       0 |    0 |   10 |     12 |      0 |          0 |
+|         (u_act)              |           act_mem |        192 |        192 |       0 |    0 |   10 |      0 |      0 |          0 |
+|         g_bank[0].u_bank     |          act_bank |          3 |          3 |       0 |    0 |    0 |      4 |      0 |          0 |
+|         g_bank[1].u_bank     |       act_bank_77 |          3 |          3 |       0 |    0 |    0 |      4 |      0 |          0 |
+|         g_bank[2].u_bank     |       act_bank_78 |          1 |          1 |       0 |    0 |    0 |      4 |      0 |          0 |
+|       u_agu                  |               agu |        125 |        125 |       0 |    0 |  440 |      0 |      0 |          0 |
+|       u_ctrl                 |        controller |        555 |        555 |       0 |    0 |   99 |      0 |      0 |          0 |
+|       u_pe                   |          pe_array |      12753 |      12722 |       0 |   31 | 8235 |      0 |      0 |          0 |
+|         (u_pe)               |          pe_array |         65 |         34 |       0 |   31 |  667 |      0 |      0 |          0 |
+|         g_lane[0].u_lane     |              lane |       1581 |       1581 |       0 |    0 |  946 |      0 |      0 |          0 |
+|           (g_lane[0].u_lane) |              lane |        997 |        997 |       0 |    0 |  287 |      0 |      0 |          0 |
+|           u_dot              |           dot8_68 |        587 |        587 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_68 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_69 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__55 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_70 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__54 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_71 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__53 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_72 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__52 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_73 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__51 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_74 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__50 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_75 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__49 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_76 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__48 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[1].u_lane     |            lane_0 |       1582 |       1582 |       0 |    0 |  947 |      0 |      0 |          0 |
+|           (g_lane[1].u_lane) |            lane_0 |        997 |        997 |       0 |    0 |  288 |      0 |      0 |          0 |
+|           u_dot              |           dot8_59 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_59 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_60 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__1 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_61 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__2 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_62 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__3 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_63 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__4 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_64 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__5 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_65 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__6 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_66 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__7 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_67 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |     booth_r4_mul8 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[2].u_lane     |            lane_1 |       1584 |       1584 |       0 |    0 |  946 |      0 |      0 |          0 |
+|           (g_lane[2].u_lane) |            lane_1 |        999 |        999 |       0 |    0 |  287 |      0 |      0 |          0 |
+|           u_dot              |           dot8_50 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_50 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_51 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__63 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_52 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__62 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_53 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__61 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_54 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__60 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_55 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__59 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_56 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__58 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_57 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__57 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_58 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__56 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[3].u_lane     |            lane_2 |       1582 |       1582 |       0 |    0 |  944 |      0 |      0 |          0 |
+|           (g_lane[3].u_lane) |            lane_2 |        997 |        997 |       0 |    0 |  285 |      0 |      0 |          0 |
+|           u_dot              |           dot8_41 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_41 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_42 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__23 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_43 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__22 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_44 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__21 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_45 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__20 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_46 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__19 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_47 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__18 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_48 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__17 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_49 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__16 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[4].u_lane     |            lane_3 |       1631 |       1631 |       0 |    0 |  949 |      0 |      0 |          0 |
+|           (g_lane[4].u_lane) |            lane_3 |       1046 |       1046 |       0 |    0 |  290 |      0 |      0 |          0 |
+|           u_dot              |           dot8_32 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_32 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_33 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__31 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_34 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__30 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_35 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__29 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_36 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__28 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_37 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__27 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_38 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__26 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_39 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__25 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_40 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__24 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[5].u_lane     |            lane_4 |       1581 |       1581 |       0 |    0 |  946 |      0 |      0 |          0 |
+|           (g_lane[5].u_lane) |            lane_4 |        996 |        996 |       0 |    0 |  287 |      0 |      0 |          0 |
+|           u_dot              |           dot8_23 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_23 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_24 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__39 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_25 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__38 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_26 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__37 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_27 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__36 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_28 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__35 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_29 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__34 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_30 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__33 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_31 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__32 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[6].u_lane     |            lane_5 |       1580 |       1580 |       0 |    0 |  946 |      0 |      0 |          0 |
+|           (g_lane[6].u_lane) |            lane_5 |        995 |        995 |       0 |    0 |  287 |      0 |      0 |          0 |
+|           u_dot              |           dot8_14 |        588 |        588 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |           dot8_14 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |           mul8_15 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__15 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |           mul8_16 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__14 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |           mul8_17 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__13 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |           mul8_18 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__12 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_19 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__11 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_20 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__10 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_21 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__9 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_22 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  |  booth_r4_mul8__8 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|         g_lane[7].u_lane     |            lane_6 |       1573 |       1573 |       0 |    0 |  944 |      0 |      0 |          0 |
+|           (g_lane[7].u_lane) |            lane_6 |        989 |        989 |       0 |    0 |  285 |      0 |      0 |          0 |
+|           u_dot              |              dot8 |        587 |        587 |       0 |    0 |  659 |      0 |      0 |          0 |
+|             (u_dot)          |              dot8 |        116 |        116 |       0 |    0 |  123 |      0 |      0 |          0 |
+|             g_mul[0].u_mul   |              mul8 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__47 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[1].u_mul   |            mul8_7 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__46 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[2].u_mul   |            mul8_8 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__45 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[3].u_mul   |            mul8_9 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__44 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[4].u_mul   |           mul8_10 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__43 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[5].u_mul   |           mul8_11 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__42 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[6].u_mul   |           mul8_12 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__41 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|             g_mul[7].u_mul   |           mul8_13 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|               g_booth.u_mul  | booth_r4_mul8__40 |         59 |         59 |       0 |    0 |   67 |      0 |      0 |          0 |
+|       u_q                    |        qparam_mem |          0 |          0 |       0 |    0 |  288 |      0 |      0 |          0 |
+|       u_wgt                  |           wgt_mem |          0 |          0 |       0 |    0 |    0 |     32 |      0 |          0 |
+|     u_host                   |           host_if |        189 |        189 |       0 |    0 |  218 |      0 |      0 |          0 |
+|     u_rx                     |           uart_rx |         46 |         46 |       0 |    0 |   53 |      0 |      0 |          0 |
+|     u_tx                     |           uart_tx |         30 |         30 |       0 |    0 |   44 |      0 |      0 |          0 |
++------------------------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
